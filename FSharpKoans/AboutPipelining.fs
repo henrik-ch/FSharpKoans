@@ -22,7 +22,7 @@ type ``about pipelining``() =
         let evens = List.filter isEven numbers
         let result = List.map square evens
 
-        AssertEquality result __
+        AssertEquality result [0;4;16]
 
     [<Koan>]
     member this.SquareEvenNumbersWithParens() =
@@ -34,7 +34,7 @@ type ``about pipelining``() =
 
         let result = List.map square (List.filter isEven numbers)
 
-        AssertEquality result __
+        AssertEquality result [0; 4; 16]
 
     [<Koan>]
     member this.SquareEvenNumbersWithPipelineOperator() =
@@ -45,8 +45,9 @@ type ``about pipelining``() =
             [0..5]
             |> List.filter isEven
             |> List.map square
-        
-        AssertEquality result __
+            // nicest looking one, remember pipelining!
+
+        AssertEquality result [0; 4; 16]
 
     [<Koan>]
     member this.HowThePipeOperatorIsDefined() =
@@ -58,4 +59,4 @@ type ``about pipelining``() =
             |> List.filter isEven
             |> List.map square
 
-        AssertEquality result __
+        AssertEquality result [0; 4; 16]
