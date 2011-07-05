@@ -17,8 +17,8 @@ type ``about functions``() =
         let result1 = add 2 2
         let result2 = add 5 2
         
-        AssertEquality result1 __
-        AssertEquality result2 __
+        AssertEquality result1 4
+        AssertEquality result2 7
 
     [<Koan>]
     member this.NestingFunctions() =
@@ -29,4 +29,4 @@ type ``about functions``() =
             double(double(x))
 
         let result = quadruple 4
-        AssertEquality result __
+        AssertEquality result 16

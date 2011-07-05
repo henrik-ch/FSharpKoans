@@ -7,7 +7,7 @@ type ``about let``() =
     member this.LetBindsANameToAValue() =
         let x = 50
         
-        AssertEquality x __
+        AssertEquality x 50
     
     [<Koan>]
     member this.LetInfersTheTypesOfValuesWherePossible() =
@@ -17,14 +17,14 @@ type ``about let``() =
 
         let y = "a string"
         let expectedType = y.GetType()
-        AssertEquality expectedType typeof<FILL_ME_IN>
+        AssertEquality expectedType typeof<string>
     
     [<Koan>]
     member this.ModifyingTheValueOfVariables() =
         let mutable x = 100
         x <- 200
 
-        AssertEquality x __
+        AssertEquality x 200
 
     [<Koan>]
     member this.YouCannotModifyALetBoundValueIfItIsNotMutable() =
@@ -38,4 +38,4 @@ type ``about let``() =
         //      to reuse the name of a value in some cases using "shadowing".
         let x = 100
          
-        AssertEquality x __
+        AssertEquality x 100
